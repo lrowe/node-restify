@@ -252,7 +252,7 @@ test('GH-845: should blow up when using async formatter ' +
 
     SERVER.on('uncaughtException', function (req, res, route, err) {
         t.ok(err);
-        t.equal(err.name, 'AssertionError');
+        t.equal(err.name, 'AssertionError [ERR_ASSERTION]');
         t.equal(err.message, 'async formatter for text/async requires ' +
                 'callback to res.send() (func) is required');
         res.write('uncaughtException');

@@ -486,7 +486,7 @@ test('GH-951: sendRaw accepts only strings or buffers', function (t) {
 
     SERVER.on('uncaughtException', function (req, res, route, err) {
         t.ok(err);
-        t.equal(err.name, 'AssertionError');
+        t.equal(err.name, 'AssertionError [ERR_ASSERTION]');
         t.equal(err.message, 'res.sendRaw() accepts only strings or buffers');
         t.end();
     });
